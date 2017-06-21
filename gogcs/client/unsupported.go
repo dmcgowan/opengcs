@@ -1,5 +1,5 @@
 // +build !windows
 
-package gcsclient
+package client
 
 // TODO @jhowardmsft - This will move to Microsoft/opengcs soon
