@@ -52,7 +52,7 @@ const (
 //
 // VHD is the priority.
 type Config struct {
-	KirdPath           string                      // Path to where kernel/initrd are found (defaults to c:\program files\lcow)
+	KirdPath           string                      // Path to where kernel/initrd are found (defaults to c:\program files\Linux Containers)
 	KernelFile         string                      // Kernel for Utility VM (embedded in a UEFI bootloader) - does NOT include full path, just filename
 	InitrdFile         string                      // Initrd image for Utility VM - does NOT include full path, just filename
 	Vhdx               string                      // VHD for booting the utility VM - is a full path
@@ -65,7 +65,7 @@ type Config struct {
 }
 
 // GenerateDefault generates a default config from a set of options
-// If baseDir is not supplied, defaults to $env:ProgramFiles\lcow
+// If baseDir is not supplied, defaults to $env:ProgramFiles\Linux Containers
 func (config *Config) GenerateDefault(options []string) error {
 	if config.UvmTimeoutSeconds < 0 {
 		return fmt.Errorf("opengcs: cannot generate a config when supplied a negative utility VM timeout")
@@ -112,7 +112,7 @@ func (config *Config) GenerateDefault(options []string) error {
 	}
 
 	if config.KirdPath == "" {
-		config.KirdPath = filepath.Join(os.Getenv("ProgramFiles"), "lcow")
+		config.KirdPath = filepath.Join(os.Getenv("ProgramFiles"), "Linux Containers")
 	}
 
 	if config.Vhdx == "" {
